@@ -12,3 +12,6 @@ Don't edit this repository by hand. The master copy lives in the private Seen It
 `npm run publish-config`.
 
 Served at https://guspecht.github.io/seen-it-config/config.json
+
+`privacy.html` is the extension's privacy policy (https://guspecht.github.io/seen-it-config/privacy.html),
+generated from `docs/PRIVACY.md` in the private project. `fonts/` holds the bundled typefaces (OFL).
