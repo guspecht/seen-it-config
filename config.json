@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "version": "2026-10-03.1",
+  "minExt": "2.3.0",
+  "sites": {
+    "netflix": {
+      "posters": [
+        {
+          "id": "carousel-2025",
+          "link": "a[href*='jbv=']",
+          "known": [],
+          "parent": true,
+          "ids": [
+            "[?&]jbv=(\\d+)",
+            "/watch/(\\d+)",
+            "/title/(\\d+)"
+          ],
+          "hide": "[data-virtual-slot]",
+          "exclude": "header, nav, [role='menu'], [data-uia^='navigation']"
+        },
+        {
+          "id": "classic",
+          "link": "a[href*='/watch/'], a[href*='/title/']",
+          "known": [
+            ".title-card-container",
+            ".title-card, .titleCard--container",
+            ".slider-item"
+          ],
+          "parent": true,
+          "ids": [
+            "/watch/(\\d+)",
+            "/title/(\\d+)",
+            "[?&]jbv=(\\d+)"
+          ],
+          "tracking": true,
+          "hide": ".slider-item",
+          "exclude": "header, nav, [role='menu'], [data-uia^='navigation']"
+        },
+        {
+          "id": "any-title-link",
+          "link": "a[href*='/watch/'], a[href*='/title/'], a[href*='jbv=']",
+          "known": [],
+          "parent": true,
+          "ids": [
+            "[?&]jbv=(\\d+)",
+            "/watch/(\\d+)",
+            "/title/(\\d+)"
+          ],
+          "tracking": true,
+          "hide": ".slider-item, [data-virtual-slot]",
+          "exclude": "header, nav, [role='menu'], [data-uia^='navigation']"
+        }
+      ],
+      "rows": [
+        {
+          "id": "carousel-2025",
+          "row": "section[data-uia^='carousel-row']",
+          "heading": "h2"
+        },
+        {
+          "id": "classic",
+          "row": ".lolomoRow",
+          "heading": ".row-header-title, .rowTitle, .rowHeader, h2"
+        }
+      ],
+      "modal": [
+        {
+          "id": "preview-modal",
+          "modal": ".previewModal--container",
+          "miniClass": "mini-modal",
+          "myList": "[data-uia*='my-list'], [data-uia*='add-to-list'], button[aria-label*='My List' i]",
+          "buttonRow": "[class*='buttonControls']"
+        },
+        {
+          "id": "dialog",
+          "modal": "[role='dialog'][data-uia*='modal'], [data-uia*='preview-modal']",
+          "miniClass": "mini-modal",
+          "myList": "[data-uia*='my-list'], [data-uia*='add-to-list'], button[aria-label*='My List' i]",
+          "buttonRow": "[class*='buttonControls'], [data-uia*='controls']"
+        }
+      ],
+      "player": [
+        {
+          "id": "video-title",
+          "video": "video",
+          "title": "[data-uia='video-title']",
+          "show": "h4"
+        },
+        {
+          "id": "player-title",
+          "video": "video",
+          "title": "[data-uia*='video-title'], [class*='video-title']",
+          "show": "h4, [data-uia*=\"series-title\"]"
+        }
+      ],
+      "history": [
+        {
+          "id": "viewing-activity",
+          "link": "a[href*='/title/']",
+          "row": "li, tr",
+          "exclude": "header, nav, footer",
+          "showMore": "show more|mostrar mais|mostrar más|ver más|afficher plus|mehr anzeigen|mostra altro"
+        }
+      ],
+      "profile": [
+        {
+          "id": "header-avatar",
+          "name": [
+            {
+              "sel": ".account-dropdown-button img[alt], img.profile-icon[alt]",
+              "attr": "alt"
+            },
+            {
+              "sel": "[data-uia*='account'] img[alt], [data-uia*='profile'] img[alt]",
+              "attr": "alt"
+            },
+            {
+              "sel": "[aria-label*=' - Account'], [aria-label*=' – Account']",
+              "attr": "aria-label",
+              "re": "^(.+?) [-–] Account"
+            }
+          ],
+          "gate": {
+            "item": ".profile-link, .choose-profile a, [data-uia*='profile-link'], [data-uia*='action-select-profile']",
+            "name": ".profile-name, [data-uia*='profile-name']"
+          }
+        }
+      ]
+    }
+  },
+  "kill": {},
+  "notice": null
+}
