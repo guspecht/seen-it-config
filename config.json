@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "2026-10-03.1",
+  "version": "2026-10-05.1",
   "minExt": "2.3.0",
   "sites": {
     "netflix": {
@@ -15,7 +15,7 @@
             "/watch/(\\d+)",
             "/title/(\\d+)"
           ],
-          "hide": "[data-virtual-slot]",
+          "hide": "[data-virtual-slot], [data-uia='gallery'] > div > div",
           "exclude": "header, nav, [role='menu'], [data-uia^='navigation']"
         },
         {
@@ -47,7 +47,7 @@
             "/title/(\\d+)"
           ],
           "tracking": true,
-          "hide": ".slider-item, [data-virtual-slot]",
+          "hide": ".slider-item, [data-virtual-slot], [data-uia='gallery'] > div > div",
           "exclude": "header, nav, [role='menu'], [data-uia^='navigation']"
         }
       ],
